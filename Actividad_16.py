@@ -1,3 +1,5 @@
+from traceback import print_tb
+
 print("Actividad 16")
 
 class Libros:
@@ -22,8 +24,16 @@ class Registrar_Libros:
             try:
                 return int(input(mensaje))
             except ValueError:
-
-
+                print("Ingrese un dato Valido")
 
     def agregar_libro(self):
-        pass
+
+        cantidad = self.pedir_entero("Ingrese la cantidad de libros para registrar: ")
+        for i in  range(cantidad):
+            print("-----------------------------------------")
+            print(f"Ingrese el libro {i+1}")
+            while True:
+                codigo = input("Ingrese el codigo del libro: ")
+                if codigo in self.dicc_libros:
+                    print("Este l")
+
